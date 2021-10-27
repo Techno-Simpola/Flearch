@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 import pymongo
 from flask_paginate import Pagination, get_page_args
+import os
 
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ def hello_name():
 @app.route("/search_results")
 def fun():
     client = pymongo.MongoClient(
-        "mongodb+srv://Search-DB:password-glugledb@cluster0.igzqx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", connect=False)
+        os.environ.get('MONGO_URI'), connect=False)
     db = client.glugledb
     search_string = request.args.get('search')
     search_result = []
