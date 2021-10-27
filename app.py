@@ -13,7 +13,7 @@ def hello_name():
 @app.route("/search_results")
 def fun():
     client = pymongo.MongoClient(
-        "mongodb+srv://Search-DB:password-glugledb@cluster0.igzqx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", connect=False)
+        "mongodb+srv://Search-DB:password-glugledb@cluster0.igzqx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", connect=True)
     db = client.glugledb
     search_string = request.args.get('search')
     search_result = []
