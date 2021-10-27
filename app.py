@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_name():
     return render_template('home.html')
-
+    
 
 @app.route("/search_results")
 def fun():
