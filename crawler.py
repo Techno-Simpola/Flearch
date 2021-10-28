@@ -8,7 +8,8 @@ import sys
 
 
 class Crawler:
-    client = pymongo.MongoClient(os.environ.get(MONGO_URI))
+    client = pymongo.MongoClient(
+        "mongodb+srv://Search-DB:password-glugledb@cluster0.igzqx.mongodb.net/glugledb?retryWrites=true&w=majority")
     db = client.glugledb
     collection = db.info
 
