@@ -8,7 +8,7 @@ import sys
 
 
 class Crawler:
-    client = pymongo.MongoClient("mongodb://127.0.0.1:27017")
+    client = pymongo.MongoClient(os.environ.get(MONGO_URI))
     db = client.glugledb
     collection = db.info
 

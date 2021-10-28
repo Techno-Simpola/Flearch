@@ -54,7 +54,7 @@ def sort_rank(required, optimized_res):
 
 @app.route("/search_results")
 def fun():
-    client = pymongo.MongoClient("mongodb://127.0.0.1:27017", connect=False)
+    client = pymongo.MongoClient("mongodb+srv://Search-DB:password-glugledb@cluster0.igzqx.mongodb.net/glugledb?retryWrites=true&w=majority")
     db = client.glugledb
     search_string = request.args.get('search')
     search_results = []
