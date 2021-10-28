@@ -4,3 +4,4 @@ reuters
 stopwords
 tokenize
 corpus
+punkt
