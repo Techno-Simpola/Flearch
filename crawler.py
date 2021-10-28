@@ -8,8 +8,7 @@ import sys
 
 
 class Crawler:
-    client = pymongo.MongoClient(
-        'mongodb+srv://Search-DB:password-glugledb@cluster0.igzqx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+    client = pymongo.MongoClient("mongodb://127.0.0.1:27017")
     db = client.glugledb
     collection = db.info
 
@@ -59,6 +58,7 @@ class Crawler:
             'url': url,
             'title': title,
             'description': desc,
+            'score': 0,
         }
 
         results = self.db.results
@@ -67,7 +67,8 @@ class Crawler:
             [
                 ('url', pymongo.TEXT),
                 ('title', pymongo.TEXT),
-                ('desc', pymongo.TEXT)
+                ('desc', pymongo.TEXT),
+                ('score', 1)
             ],
             name='results',
             default_language='english'
