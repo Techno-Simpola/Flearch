@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for, request
+from dns import resolver
 import pymongo
 from flask_paginate import Pagination, get_page_args
 import os
@@ -54,8 +55,8 @@ def sort_rank(required, optimized_res):
 
 @app.route("/search_results")
 def fun():
-    client = pymongo.MongoClient("mongodb+srv://Search-DB:password-simpola@cluster0.igzqx.mongodb.net/simpola?retryWrites=true&w=majority")
-    db = client.simpola
+    client = pymongo.MongoClient("mongodb+srv://simpola:simpola@cluster0.tx11yn3.mongodb.net/?retryWrites=true&w=majority")
+    db = client.db1
     search_string = request.args.get('search')
     search_results = []
     required = []

@@ -9,9 +9,9 @@ import sys
 
 class Crawler:
     client = pymongo.MongoClient(
-        "mongodb+srv://simpola:<simpola>@crawlingcluster.iqqznkf.mongodb.net/simpola?retryWrites=true&w=majority")
-    db = client.simpola
-    collection = db.info
+        "mongodb+srv://simpola:simpola@cluster0.tx11yn3.mongodb.net/?retryWrites=true&w=majority")
+    db = client.db1
+    collection = db.collection1
 
     disallowed_link = []
 
