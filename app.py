@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request
-# from dns import resolver
+from dns import resolver
 import pymongo
 from flask_paginate import Pagination, get_page_args
 import os
